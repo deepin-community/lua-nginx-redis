@@ -1,5 +1,30 @@
-template-repository (1.0-1) unstable; urgency=medium
+lua-nginx-redis (0.27-1.1) unstable; urgency=medium
 
-  * Initial release
+  * Non-maintainer upload.
+  * source only upload to enable migration (Closes: #953271)
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Paul Gevers <elbrus@debian.org>  Fri, 06 Mar 2020 21:58:43 +0100
+
+lua-nginx-redis (0.27-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refreshed package standards.
+  * Updated watchfile to deal with release candidates.
+
+ -- Ulises Vitulli <dererk@debian.org>  Mon, 22 Jul 2019 14:06:22 -0300
+
+lua-nginx-redis (0.27~rc1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refreshed package standards:
+    - Updated watchfile
+    - Bump up standard versions.
+    - Updated copyrights format.
+
+ -- Ulises Vitulli <dererk@debian.org>  Fri, 08 Feb 2019 13:12:35 -0300
+
+lua-nginx-redis (0.15-1) unstable; urgency=low
+
+  * Initial release. (Closes: #693097)
+
+ -- Ulises Vitulli <dererk@debian.org>  Thu, 22 Nov 2012 11:37:07 -0300
