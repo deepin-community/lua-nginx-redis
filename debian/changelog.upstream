@@ -1,0 +1,1083 @@
+commit 0b22d5ae37a62b45b1ab3406ac111cd71e825c41
+Author: Yichun Zhang (agentzh) <yichun@openresty.com>
+Date:   Mon Oct 29 14:22:51 2018 -0700
+
+    bumped version to 0.27.
+
+commit 41827e454126d8a030b9e09fbf7e3a9f3afb8088
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Fri Jun 8 17:51:36 2018 -0700
+
+    optimize: fixed misuses of Lua global variables in our Lua code (caught by the new version of the lj-releng tool).
+
+commit 03c092a0edb6e7d2a9519ea6f29e7a0ba7346142
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Fri Oct 27 13:53:17 2017 -0700
+
+    tests: added new valgrind false positives in the latest nginx core.
+
+commit 9b8ca20018eac82f1e85697c8726f86d359bd038
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Fri Oct 27 13:13:27 2017 -0700
+
+    tests: valgrind.suppress: removed too aggressive suppressions in nginx mem pools and luajit lj_str_new.
+
+commit 6699768b4836fee33df12a95650a14ce9b56c646
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Fri Oct 27 12:02:15 2017 -0700
+
+    tests: minor tweaks in valgrind.suppress.
+
+commit 801dc8bfaada9260fadc864c10875560f00332ff
+Author: vacuum-car <nmbakfm@gmail.com>
+Date:   Tue Sep 19 16:08:15 2017 +0900
+
+    bugfix: error message: typo fix: Unkown => Unknown
+    
+    Signed-off-by: Yichun Zhang (agentzh) <agentzh@gmail.com>
+
+commit b18966e4a079d391bea7d3fb715782cb33e2e29b
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Tue Dec 27 10:48:24 2016 -0800
+
+    tests: added a passing test for the connection refused error case (#106).
+
+commit bd06e7240c9b6dbfc2dc95af6783e38635267d78
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sun Dec 18 14:39:52 2016 -0800
+
+    doc: updated copyright notice.
+
+commit d1dc2f847f97816ed3b57bb116362c0d41f2f1f1
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sun Dec 18 14:37:39 2016 -0800
+
+    doc: updated copyright notice.
+
+commit 403d2982ec1dacaa758301c788754a82c82b00d8
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Fri Nov 4 13:57:34 2016 -0700
+
+    upgraded lua-resty-redis to 0.26.
+
+commit f35bb7cd18414337c4d47479c4c4a3f1a345e8e6
+Author: spacewander <spacewanderlzx@gmail.com>
+Date:   Fri Oct 14 17:31:40 2016 +0800
+
+    use `select` to avoid temporal variable and be more luajit-friendly.
+
+commit 05858d93e12d3132d87cb41abfa9e1c3a7da3a6e
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Wed Sep 28 20:21:36 2016 -0700
+
+    checked in file dist.ini for OPM packaging.
+
+commit 886e95e2296c167cbddf8cc5ae96f556e0784ec4
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sun Sep 11 21:13:56 2016 -0700
+
+    added a (passing) test case for keys with underscores.
+
+commit e894abec0fa50416ff888c301fcca76fdcb31685
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Mon Aug 15 14:51:45 2016 -0700
+
+    travis-ci: removed the env LUA_CMODULE_DIR=/lib which caused problems.
+
+commit 486ac295c27afcc827bca3697dcfa0aaa011578f
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Mon Aug 15 14:43:54 2016 -0700
+
+    doc: use *_by_lua_block {} in the code sample.
+
+commit 0f3653f8e7bbedb47ab7d80c9abbe67d1cbe0cfb
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Mon Aug 15 14:35:38 2016 -0700
+
+    bumped version to 0.25.
+
+commit e58b2db58acf4456ae43d854896f7db0c7525ada
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Mon Aug 15 14:26:50 2016 -0700
+
+    doc: fixed links pointing to wiki.nginx.org.
+
+commit 09bdcd6d79e1d8f8b4665b54839adf58d380ad65
+Author: spacewander <spacewanderlzx@gmail.com>
+Date:   Wed May 25 22:29:47 2016 +0800
+
+    feature: now this module automatically generate Lua methods for *any* Redis commands the caller attempts to use.
+    
+    The lazily generated Lua methods are cached in the Lua module table for
+    faster subsequent uses.
+    
+    In theory, any Redis commands in existing Redis or even future Redis
+    servers can work out of the box.
+    
+    Signed-off-by: Yichun Zhang (agentzh) <agentzh@gmail.com>
+
+commit a9ca41c2c022ad60f9b524b48bf65287a207112b
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Wed May 25 19:43:46 2016 -0700
+
+    bumped version to 0.24.
+
+commit 83a65c3bd1cef02d7d532320683b1c5549143847
+Author: alvin <oycw@users.noreply.github.com>
+Date:   Thu May 19 17:55:48 2016 +0800
+
+    bugfix: added tostring() calls to avoid the "attempt to concatenate local 'prefix' (a nil value)" error in _read_reply().
+    
+    Signed-off-by: Yichun Zhang (agentzh) <agentzh@gmail.com>
+
+commit ce5fc5b8e16c8a8c0cc41f3941aa21a7d4aef4f9
+Author: Ilya Shipitsin <chipitsine@gmail.com>
+Date:   Wed May 25 00:55:03 2016 +0500
+
+    feature: added initial travis ci support.
+    
+    Signed-off-by: Yichun Zhang (agentzh) <agentzh@gmail.com>
+
+commit 062f20817d2052d233f14cd2b67aac7ccfae0e70
+Author: doujiang24 <doujiang24@gmail.com>
+Date:   Fri Mar 18 15:30:26 2016 +0800
+
+    optimize: we now alway call tostring() upon args in redis query methods.
+    
+    also reduced Lua string concatenations in redis query composition.
+    
+    Signed-off-by: Yichun Zhang (agentzh) <agentzh@gmail.com>
+
+commit 7a19cf90522ee970cba63571ff0d0586300afdb8
+Merge: 3c3bcf4 e2aaa64
+Author: Yichun Zhang <agentzh@gmail.com>
+Date:   Wed Feb 3 09:39:33 2016 -0800
+
+    Merge pull request #76 from bhanuvrat/patch-1
+    
+    correct a typo
+
+commit e2aaa64c1f5cf6bdf1607ba162078eca17e218b7
+Author: Anuvrat Parashar <bhanuvrat@gmail.com>
+Date:   Wed Feb 3 13:35:11 2016 +0530
+
+    correct a typo
+
+commit 3c3bcf41693b455ccb79dde553de439d1112c350
+Merge: 6aa459b 3a6087f
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Mon Jan 25 15:21:19 2016 -0800
+
+    Merge branch 'master' of github.com:openresty/lua-resty-redis
+
+commit 6aa459b11dc4d89e6e36c8af869ad85d23b2bfae
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Mon Jan 25 15:21:13 2016 -0800
+
+    doc: various updates.
+
+commit 3a6087f83a058520701c7ffa6fa5f6cd1781dd00
+Merge: 662b0d4 21ee59c
+Author: Yichun Zhang <agentzh@gmail.com>
+Date:   Thu Dec 24 11:02:24 2015 -0800
+
+    Merge pull request #74 from moonbingbing/master
+    
+    Remove the final semicolon, keep the code style
+
+commit 21ee59c73a7e449b194262ca498fb9655a4c5522
+Author: WenMing <moonbingbing@gmail.com>
+Date:   Thu Dec 24 15:13:40 2015 +0800
+
+    Remove the final semicolon, keep the code style
+
+commit 662b0d4c3ca2f49ed60f583354be5c698741b2bc
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Wed Dec 23 13:37:04 2015 -0800
+
+    fixed Makefile to allow relative paths in LUA_LIB_DIR when DESTDIR is not specified.
+
+commit 65fa7af6e894906a2792a7a53f09d66cfab326fb
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Tue Dec 22 20:56:53 2015 -0800
+
+    optimize: moved string concatenation for the redis request construction onto the C land. thanks Dejiang Zhu for the patch in #73.
+
+commit afa1c1c69673b81a1d479a9e8372e16fa00366a6
+Merge: 5e8c14a c8f8de9
+Author: Yichun Zhang <agentzh@gmail.com>
+Date:   Sat Nov 28 22:14:39 2015 +0800
+
+    Merge pull request #71 from bungle/master
+    
+    Commented out unused error from locals, added type and tostring to locals
+
+commit c8f8de9a37f1fdca7ea69cb2ce9c746443af3a5e
+Author: Aapo Talvensaari <aapo.talvensaari@gmail.com>
+Date:   Fri Nov 27 16:20:47 2015 +0200
+
+    Commented out unused error from locals, added type and tostring to locals.
+
+commit 5e8c14a92becde93c94f447b205f2f1d21e5bc3d
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Mon Nov 23 23:18:37 2015 +0800
+
+    added a .gitattributes file to correct GitHub's language tag.
+
+commit 748ba8daf02568a7f09f40efc6436d1742a94cae
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Wed Oct 28 16:31:42 2015 +0800
+
+    doc: updated the copyright years.
+
+commit 7bdb2e96c60209d02d8cde54b2b8766aa8a948fd
+Author: doujiang24 <doujiang24@gmail.com>
+Date:   Tue Jul 21 11:41:28 2015 +0800
+
+    doc: check redis pipelined requests' return values more strictly.
+    
+    some commands (like hkeys and smembers) may return empty tables,
+    which may result in nil res[1] values.
+    
+    thanks Dejiang Zhu for the patch in #62.
+
+commit 688f932514033276462c2b97f2d7cf9db967d462
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Wed Oct 29 20:11:31 2014 -0700
+
+    bugfix: the "attempt to call local new_tab (a table value)" error might happen when LuaJIT 2.0 was used and a local Lua module named "table.new" was visible. thanks Michael Pirogov for the report in #51.
+
+commit c49ba7c3b21705b62c98abb670d5f9f9f6b1ff09
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sun May 11 20:07:36 2014 -0700
+
+    doc: mentioned the "bad request" error in the "Limitations" section.
+
+commit 4f41f9feaa64eb5114454b64941a3c9cd2faedbc
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Tue Apr 15 13:19:43 2014 -0700
+
+    doc: mentioned the maxclients redis parameter too.
+
+commit a78cf3c4d530ca48fb0b5f9b614f34f9e57a5419
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Tue Apr 15 13:14:58 2014 -0700
+
+    doc: added a new section "Check List for Issues".
+
+commit 3051f57ca528c9d44e673101abad0f8f28609ba7
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Tue Apr 8 22:06:15 2014 -0700
+
+    tested the select() command also.
+
+commit ddd244e9d9fcd27ce48c45fabc3e8de72b7963e1
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sat Apr 5 10:51:18 2014 -0700
+
+    fixed a test case for redis 2.8.x.
+
+commit d062df24ebe6fc5579b5b08c589f2332b9ef643b
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Tue Apr 1 14:48:54 2014 -0700
+
+    suppressed a false positive in libdl.
+
+commit 1dc183d1bb4043a1513864dd0a8f1b1c6d498f6c
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Wed Mar 12 15:56:33 2014 -0700
+
+    removed the years from the in-source copyright.
+
+commit dd0a8c64921e54c53b2c6dc22d7670c896b8544d
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Wed Mar 12 15:55:18 2014 -0700
+
+    bumped version to 0.20.
+
+commit 7f09ddeededd930e781583b4de318486dca2c241
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sat Mar 8 14:28:51 2014 -0800
+
+    fixed a test case that could fail due to machine differences.
+
+commit b96d34393beb01912ff4494c9822e23d4c978f51
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Fri Mar 7 16:01:15 2014 -0800
+
+    Bug fixes in the subscribing mode.
+    
+    Thanks doujiang for the patch in #38.
+    
+    * bugfix: the unsubscribe/subscribe commands could not be called after read_reply() returned "timeout".
+    * bugfix: we incorrectly allowed reusing redis connections in the subscribed state.
+
+commit 7dbb7f0b40477211d9f108af4b366cced3f0013f
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Wed Feb 26 16:02:03 2014 -0800
+
+    feature: added new redis 2.8.0 commands: scan, sscan, hscan, and zscan. thanks Dragonoid for the patch in #36.
+
+commit 6c4c5703de2fd6ed8e693ababaf10cbcae00db81
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Wed Feb 5 12:09:43 2014 -0800
+
+    bumped version to 0.19.
+
+commit 571641f621a1f855498a50ff126bf9f9ac1a5d42
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Wed Feb 5 12:06:04 2014 -0800
+
+    feature: the read_reply() method can now be re-tried immediately after a "timeout" error is returned.
+
+commit 3a3e4d036792d9f0d60eab5d04171cd99b08af6c
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Fri Jan 10 17:06:09 2014 -0800
+
+    bumped version to 0.18.
+
+commit 205e92cc5b57e9836c9ab87e0f009c80a4cb2686
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Fri Jan 10 17:04:24 2014 -0800
+
+    doc: updated the copyright year.
+
+commit 4b0b18dd4a885731207c7a9026e59c27d9c4f9fe
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Wed Jan 8 12:46:19 2014 -0800
+
+    fixed a test case that could fail in slow testing mode.
+
+commit d9025fdf3c3fe4a0c50474e83e4f2c58506933a2
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Tue Dec 24 17:57:44 2013 -0800
+
+    optimize: eliminate one (expensive) string.sub() call in the redis reply parser.
+
+commit 207cdedeb0380821c4cd8c1f51f8bc786f12e691
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Tue Dec 24 17:17:57 2013 -0800
+
+    fixed the test plan in mock.t.
+
+commit c75af8fe7f71ca05e4bd3ccb3923f6a81d62a67a
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Tue Dec 24 17:17:00 2013 -0800
+
+    bugfix: the memcached connection might enter a bad state when read timeout happens because ngx_lua's cosocket reading calls no longer automatically close the connection in this case.
+
+commit 3475f55ebd0c428e39ceb2a2c454d4b2a321591c
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Wed Dec 18 18:02:55 2013 -0800
+
+    added more (passing) tests.
+
+commit c8404795f2b0f669409b5237f10f5e4300b7e383
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Thu Dec 5 14:58:01 2013 -0800
+
+    use Test::Nginx::Socket::Lua instead of Test::Nginx::Socket in our test suite so that we can run existing tests with lua-resty-core.
+
+commit 0dffd1f8a1abad659a1ca9d7e4d757e6c4eecbdf
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sun Nov 3 19:08:27 2013 -0800
+
+    valgrind.suppress: removed luajit rules.
+
+commit 8ff24374712e2e64dfe0bef449c0f8941edf9848
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Tue Oct 29 13:16:34 2013 -0700
+
+    doc: documented the new "n" argument for the init_pipeline method.
+
+commit 2774a04217812fc66f0dbb9c70b0bd6c1529065d
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sun Oct 27 17:49:49 2013 -0700
+
+    doc: markdown formatting fixes.
+
+commit 67e0a0674eb834155faa52d2b02f810286e11781
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sun Oct 27 17:29:27 2013 -0700
+
+    doc: added Table of Contents.
+
+commit c5e3f92634239266375b351fa648d19863959869
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sun Oct 27 16:14:31 2013 -0700
+
+    doc: various formatting improvements.
+
+commit 5246276b4af95cd767f20e3862478b7bd8b59ac5
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sun Oct 13 14:10:47 2013 -0700
+
+    some docs love.
+
+commit 00e493e29cc6bf2f2271fdeb2c17d58a43194fd3
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sun Oct 13 13:57:52 2013 -0700
+
+    optimize: use LuaJIT 2.1's table.new() primitive to pre-allocate space for Lua tables. feature: added an optional argument "n" to init_pipeline() as a hint for the number of pipelined commands.
+
+commit e97549c4a9256caf43871fea960c41f68d0e338b
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Thu Oct 3 11:05:53 2013 -0700
+
+    docs: added new section "Automatic Error Logging". thanks liorc11 for asking.
+
+commit 9dbdde83d887fbacc534d3d5826269b3d6580dd3
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Thu Sep 26 19:59:38 2013 -0700
+
+    docs: further fixed an in-page link.
+
+commit e8b542ab91f9e61b029feb0e4b453975e29262db
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Thu Sep 26 19:58:26 2013 -0700
+
+    docs: fixed an in-page link.
+
+commit 75c9dee84830724a8dc1a74d171d3dff8327c20f
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Mon Sep 23 11:52:39 2013 -0700
+
+    docs: added section "Load Balancing and Failover".
+
+commit 0e81007a4c4f752c10601252d79a00c4e9346e7b
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sun Sep 22 23:21:56 2013 -0700
+
+    bumped version to 0.16.
+
+commit 2b0ddf3de9b1748db28c61b67fcd4cca126e85ac
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Sat Sep 21 00:20:40 2013 -0700
+
+    docs: do not use 0 (i.e., unlimited) max_idle_time in the set_keepalive() call in the code sample.
+
+commit 707f70e8705d54f22b28de636f9f8aded0fc8576
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Thu Sep 19 13:33:22 2013 -0700
+
+    feature: added new redis commands bitcount, bitop, client, dump, hincrbyfloat, incrbyfloat, migrate, pexpire, pexpireat, psetex, pubsub, pttl, restore, and time. thanks alex-yam for the patch in #22.
+
+commit f0924c9eda2c887fcd11dc9186781ca3284e30ae
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Thu Sep 19 13:15:22 2013 -0700
+
+    updated the copyright line in the source file. thanks alex-yam for the patch in #22.
+
+commit 6cbfbea77efc42693ec081de9635a613413730f7
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Thu Sep 19 13:14:22 2013 -0700
+
+    refactor: removed the empty string separator argument from the table.concat() call because it is already the default. thanks alex-yam for the patch in #22.
+
+commit 841ee75f83018b2d2f5cdba7b5cc3e7411480a30
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Thu Sep 19 13:00:07 2013 -0700
+
+    optimize: eliminated table.insert() because it is slower than "tb[#tb + 1] = val". thanks alex-yam for the patch in #22.
+
+commit 86709a580051c41b136ba4ff5d05c47841f6a478
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Thu Sep 19 12:21:58 2013 -0700
+
+    refactor: avoided using Lua 5.1's module() function for defining our Lua modules because it has bad side effects.
+
+commit 20d2e65cd2b0916ffc702159b9ac981f2edbbeb4
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Thu Aug 8 11:50:38 2013 -0700
+
+    docs: added a missing "local" keyword to the code sample. thanks Wendal Chen for the patch in #21.
+
+commit 4358e26b1b5b81ce336d91ce740ad2c49ff5c443
+Author: Yichun Zhang (agentzh) <agentzh@gmail.com>
+Date:   Tue Jul 16 15:50:23 2013 -0700
+
+    docs: added code samples for the redis commands hmget and hmset.
+
+commit d13571ce969cbd47c4fc4ec752ad07cdbdd0ae23
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Fri Feb 8 11:28:14 2013 -0800
+
+    updated docs a bit.
+
+commit 92668eea6009adb70bd453524732c7cc1e083561
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Mon Jan 21 17:19:34 2013 -0800
+
+    docs: mentioned CloudFlare and also updated the copyright years.
+
+commit 64097ae4d0a5c2acbcf2fa6ddd71fbbbf43bd0fa
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Wed Dec 26 17:08:09 2012 -0800
+
+    docs: English typo in README. thanks Xiang Chao for the patch in pull #12.
+
+commit 78c2bbf07468a48962b967f3fe48bae9593f6a3d
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Mon Dec 24 18:10:53 2012 -0800
+
+    docs: added the "Redis Authentication" section because it is already an FAQ.
+
+commit 9e365ba6509a2f60b12181fbfd4ef947f75e5a95
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Wed Dec 5 11:34:07 2012 -0800
+
+    documented the options table argument for the "connect" method.
+
+commit bb97411c0d98c7c74569d475fd0293d3fb1340e9
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Fri Nov 23 21:39:40 2012 -0800
+
+    docs: be more explicit on the set_keepalive method.
+
+commit 6d062bf1e11d3a9f2d2be2b1f2cda4dce644fbd5
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Mon Nov 12 12:08:13 2012 -0800
+
+    added an Installation section to README.
+
+commit 362d47c8629a8aa8f7f4f582453f92b24b948751
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Nov 11 11:28:23 2012 -0800
+
+    bumped version to 0.15.
+
+commit 67d7b241eba154149b473b559aac23f1bd9bec25
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Nov 11 11:22:20 2012 -0800
+
+    updated .gitignore to ignore ctags files.
+
+commit fba4c8dbbcec93a41e659b5a4eb498c4967a9475
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Nov 11 11:21:04 2012 -0800
+
+    avoided using ipairs() which is slower than plain "for i=1,N" loops.
+
+commit 9b52e111f16ea5327c5ab1a75312f65604d7df2f
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sat Nov 10 12:58:15 2012 -0800
+
+    updated my name in the copyright notice.
+
+commit f9a18b6bb38399a5b49bb348eca5db8737dade61
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sat Nov 10 12:23:56 2012 -0800
+
+    refactor: avoided package.seeall in module definitions.
+
+commit 4e8e4930f1914edd0c9df97c200f9178c3ad83af
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Mon Oct 15 11:16:22 2012 -0700
+
+    docs: fixed a typo in the sample code. thanks ganggewudi.
+
+commit 4ca00630582c7402ffbeef5f0c3329aafd07b0a2
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Mon Sep 24 14:43:43 2012 -0700
+
+    added proper error handling code to a test case.
+
+commit 3c8dab96905680b8be119de456e58c88471226b2
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Tue Sep 18 12:16:30 2012 -0700
+
+    bumped version to 0.14.
+
+commit 275dbd5ad5eace9f636ef7d83d64420d004b81c1
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Tue Sep 18 12:10:33 2012 -0700
+
+    optimize: now we do the string concatenation for redis queries on the lua land, which gives 13.3% over-all performance boost when using luajit 2.0.
+
+commit 52a13a81b158b317cbbb6d43a413ede65cc7a158
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Mon Sep 17 11:50:08 2012 -0700
+
+    removed the sendmsg/ngx_channel valgrind suppression rules.
+
+commit f2eb0d8423857c90e7e0f85f083d934a69707fb8
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Fri Sep 14 14:52:35 2012 -0700
+
+    suppressed new warnings from valgrind 3.8.0.
+
+commit 19058166ec2c7524d0f93ad631cb457502dcb861
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Sep 9 11:39:53 2012 -0700
+
+    docs: fixed a typo in the sample code. thanks xingxing for reporting it.
+
+commit 2f2b02587aca5f2fe7595780b9038be17619778c
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Wed Aug 22 14:42:31 2012 -0700
+
+    bumped version to 0.13.
+
+commit 13d45c927f4a46c592d3ea0987c2c91fd36123f1
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Aug 19 16:03:14 2012 -0700
+
+    docs: fixed a typo in the code sample.
+
+commit f9a42b6a57178a346a421dc7af8ab4af95a3ed73
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Aug 19 15:46:26 2012 -0700
+
+    fixed a typo in README.
+
+commit 8fd7ad1e655c0ac96950f756d20f4eac78419a1c
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Aug 19 15:44:10 2012 -0700
+
+    added more documentation to the set_keepalive method.
+
+commit 7d5e1c4689e45f9013f9d835f7ab1dd841927cf5
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Aug 19 15:31:50 2012 -0700
+
+    bumped version to 0.12.
+
+commit 35399a5a59058052e1598f24c59d245f5b0ed70e
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Aug 19 15:09:06 2012 -0700
+
+    added a test case for the "add_commands" class method.
+
+commit f2b36569325c21f1d04ca258ef311b3c75660563
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Aug 19 15:08:38 2012 -0700
+
+    feature: added new class method "add_commands" to insert new redis commands. thanks Praveen Saxena for requesting this.
+
+commit 85bb09bc6fbca28f9c37ada0db4fe09bb0ae5f24
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Aug 19 13:37:14 2012 -0700
+
+    minor edits in the t/transaction.t test script.
+
+commit 73e23903f16b0c4f606f3766826d0f2c0fc98417
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Aug 19 13:37:01 2012 -0700
+
+    docs: added an example for Redis transactions.
+
+commit 35a8beed270fb8426dca751d36f12f3c617bf2b2
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Aug 19 13:32:38 2012 -0700
+
+    added a link to the Redis Pub/Sub API in docs.
+
+commit 13aeb2f7c230dadcb02e5bf929f3c40de78b2c36
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Aug 19 13:19:36 2012 -0700
+
+    feature: added new method "read_reply" (mostly for the Redis Pub/Sub API).
+
+commit be5273c32865edb52432951dfdab9767234a4bf8
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Sun Aug 19 13:17:58 2012 -0700
+
+    removed useless comments from the test cases.
+
+commit 9ce25323cff874eb05ec4b60881ea94c0e6a344d
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Fri Aug 17 11:11:47 2012 -0700
+
+    updated docs to reflect recent changes.
+
+commit 3b1abc9dcc7e6199346e3cc5e7fba3cea0c15f33
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Fri Aug 17 11:09:34 2012 -0700
+
+    added TODO for the Redis Pub/Sub support.
+
+commit fb6a2997570c14666f322941bad0a6c183d285b1
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Thu Aug 16 15:37:35 2012 -0700
+
+    uses connection pool in one test case for the redis transactions.
+
+commit d193fc6cd317f7bb474a7a369f49c563c1c23c80
+Author: agentzh (Yichun Zhang) <agentzh@gmail.com>
+Date:   Thu Aug 16 15:32:07 2012 -0700
+
+    added (passing) tests for redis transaction queries.
+
+commit 4d491300631e0a9d469713fc36f00929371fd06b
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Thu Aug 2 11:29:20 2012 -0700
+
+    cleaned up the code a bit to reduce code duplication.
+
+commit fa58ab7cf070c5302fec0de75a3283ff98f14e97
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Jul 31 11:30:49 2012 -0700
+
+    bugfix: now the new() method will return a string describing the error as the second return value in case of failures.
+
+commit 7ae7d3c6ea128292e48856ce9b52393b319134d0
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Thu Jul 12 16:36:08 2012 -0700
+
+    bumped version to 0.11.
+
+commit ae3a0acb91a8c18067afd141bdd6dda00b9e5332
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Thu Jul 12 16:32:37 2012 -0700
+
+    feature: added the array_to_hash method. thanks Brian Akins for the patch in github #8.
+
+commit c0f29bb26b1d9a5951c94ee97b7d5cd7802630e0
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Jul 10 17:29:29 2012 -0700
+
+    fixed a test case to reflect recent changes in ngx_lua.
+
+commit 2328f50fd4306a825a89f1a640a18dca26855269
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Wed Jul 4 13:50:04 2012 -0700
+
+    bumped version number to 0.10.
+
+commit 32708fe28c8a270652838c5ff4fa2f3732484c54
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Wed Jul 4 13:48:43 2012 -0700
+
+    updated docs to reflect recent changes.
+
+commit 9074555cda07c80b8ee8ffb05f532f0ba7c6da88
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Jul 2 10:36:44 2012 -0700
+
+    feature: added the "script" command introduced in redis 2.6. thanks Evgeniy Dolzhenko for suggesting this in github #6.
+
+commit e43c11cc15f3418c89aadef45c7057b24d3b6507
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Jun 5 17:00:07 2012 +0800
+
+    added a (passing) test for using ngx.exec() right after red:get().
+
+commit 876eb4ac8504b0c5e36ab75977f2447263d12069
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sat Jun 2 10:18:49 2012 +0800
+
+    updated valgrind.suppress for linux i386.
+
+commit ef3c567ed01edce88e3d125a6bb822c7785b2f2b
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Fri Jun 1 18:40:47 2012 +0800
+
+    updated valgrind.suppress for the "hup reload" + valgrind/memcheck testing mode.
+
+commit b0c265df49343b20d631c11ce42c381e6742cb3b
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Thu May 31 20:54:59 2012 +0800
+
+    documented that storing the object instance into lua module-level variables will result in failures for concurrent requests.
+
+commit b41b323a21607654140466c4492721e10f2fc1af
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Wed May 30 15:38:26 2012 +0800
+
+    documented that this lib cannot be used in those contexts where the cosocket API is unavailable.
+
+commit c9eaa3becb95df4c5af74f24a502b28e745a1e8a
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue May 29 14:43:23 2012 +0800
+
+    README: updated minimum versions of ngx_lua or ngx_openresty that we require.
+
+commit 5a79c3fa793291f7c0b5b6adb9616e7f5a36cd99
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon May 28 11:17:49 2012 +0800
+
+    bumped version number to 0.09.
+
+commit 07f52f8b3a4cfcc1db938df753b2733d0de1d90a
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon May 28 11:11:27 2012 +0800
+
+    cleaned up the patch for the special "hmset" method wrapper from Brian Akins; also documented this method in README; added more tests for this method.
+
+commit 61e4c357434d2ecf38a27ecb646f599b30261e89
+Author: Brian Akins <brian.akins@turner.com>
+Date:   Fri May 25 08:53:33 2012 -0400
+
+    hmset can take a key and a hash-like table
+
+commit 88894658f54fb93bfd9ebfb759f934005b8247f8
+Author: Brian Akins <brian.akins@turner.com>
+Date:   Fri May 25 08:52:54 2012 -0400
+
+    new test
+
+commit d27d3ba189f35711813e5126fbb8576dd1cc4731
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Wed May 16 23:24:14 2012 +0800
+
+    added a test case for setting and getting an entry with the empty string value. thanks huang kun.
+
+commit 85ada61865bdaa370e48313050572befc1438faf
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue May 15 17:32:19 2012 +0800
+
+    README: claimed that we are production ready.
+
+commit 24ba9b881a2cd7cd5fe09e36bcd4ae7303e248f6
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sat May 12 12:45:52 2012 +0800
+
+    adjusted the test case to reproduce the issue in chaoslawful/lua-nginx-module#110.
+
+commit 381df6c794e6dd36de09738f8710d0ecf9cadb33
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Thu May 10 15:05:08 2012 +0800
+
+    added a (passing) test for chaoslawful/lua-nginx-module#110.
+
+commit 61fd3ec1b6c6604fb18696ec05d48c64ddd0a11b
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sun Apr 29 12:13:01 2012 +0800
+
+    README: updated the minimum version of ngx_lua and ngx_openresty that we require.
+
+commit be28a02214cf3cc27ff50ca99ad3b7851040c1ee
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sat Apr 28 23:01:39 2012 +0800
+
+    updated valgrind.suppress.
+
+commit 2f2fd94744bfc6c2734d3875af4c0c4d4eea6787
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sat Apr 28 17:07:30 2012 +0800
+
+    fixed timeout settings in the tests for valgrind + mockeagain.
+
+commit 98622fd7e04f5ad66a8d0035513dda4395a08bbc
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sat Apr 28 17:01:40 2012 +0800
+
+    fixed cjson lookup path for the tests.
+
+commit a38b425a574a83e63e2af1fea2f1cb3b34551949
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sat Apr 28 12:46:47 2012 +0800
+
+    added a test for a bug in ngx_lua (github issue #108).
+
+commit ddaff71c8e02aba27b5d89cdeb16554dff0c7773
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sun Mar 25 22:37:23 2012 +0800
+
+    updated .gitignore.
+
+commit 7a23c16bc7d48ee6ca29079db0b0f3043ebeba0f
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Mar 19 21:27:29 2012 +0800
+
+    README: fixed a typo found by Lance.
+
+commit cfd6ed50b9e1bf8e42094d0ea270dbd7d7f1fc3e
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sun Mar 11 18:49:45 2012 +0800
+
+    bumped version number to 0.08.
+
+commit 01c515acc720f6683d6814a159ccbb895686c1d7
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sun Mar 11 17:16:33 2012 +0800
+
+    fixed the test plan in pipeline.t and also fixed TEST 11 in sanity.t which did not flushall at the beginning.
+
+commit f9b1fac1da5c0f05a84d6fecc66d928238c6717c
+Merge: b1a2836 58d125f
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sun Mar 11 17:13:06 2012 +0800
+
+    Merge branch 'master' of github.com:agentzh/lua-resty-redis
+
+commit b1a2836610f82b98f0daaf9731f9c7f3d1ac32e6
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sun Mar 11 15:02:30 2012 +0800
+
+    documented the new Redis pipelining API; also added one more (passing) test case for it.
+
+commit e72c4f9c6bfc1f30c18f0385ed626548455f60fd
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sun Mar 11 14:46:46 2012 +0800
+
+    feature: implemened redis pipelining API by adding new methods init_pipeline, commit_pipeline, and cancel_pipeline.
+
+commit 88b4c7feea1d8258175b78a72095196896d70a4d
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sun Mar 11 14:30:13 2012 +0800
+
+    minor code refactoring.
+
+commit 58d125fac7752c92b7a5fb5145ee795c744699be
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Mar 5 20:34:01 2012 +0800
+
+    bumped version to 0.07.
+
+commit de404bc62b1e2a7f6834813c005a943dcc63b061
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Mar 5 20:33:02 2012 +0800
+
+    feature: added "evalsha" to the redis command table. thanks Chris Love.
+
+commit e4bba1f49566c45f65ff96e291f78aebc97a07a8
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Wed Feb 29 15:12:14 2012 +0800
+
+    checked in version.t.
+
+commit 9cd981d621ddba76c961711e5a5e9bde05028360
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Wed Feb 29 15:10:19 2012 +0800
+
+    feature: added _VERSION field. also bumped version number to 0.06.
+
+commit 83a1c393225cd529d1254dc97740c04978a810a2
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Feb 28 22:03:32 2012 +0800
+
+    updated Makefile.
+
+commit 53381236f020209397695108445aeba6d496f89f
+Merge: 854b13b a7c9eaf
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Feb 28 16:38:21 2012 +0800
+
+    Merge branch 'master' of github.com:agentzh/lua-resty-redis
+
+commit 854b13becb9bc97f2105e6766d3069508640b6d3
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Feb 28 16:38:04 2012 +0800
+
+    fixed a typo in README: the syntax spec for get_reused_times was wrong. thanks 万珣新.
+
+commit a7c9eafccda2237f18f45b2f0db82af62c22f8f7
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Feb 28 15:40:41 2012 +0800
+
+    Makefile: now OPENRESTY_PREFIX default to /usr/local/openresty-debug.
+
+commit 74c6f2fd95776164f7486449c88ee81498317a81
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Wed Feb 22 18:33:11 2012 +0800
+
+    updated tests for latest ngx_lua.
+
+commit 446034b0bbb2a4e77f3dfbacd409d2d784bf638b
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Feb 14 11:20:55 2012 +0800
+
+    added a link to lua-resty-mysql in README "SEE ALSO".
+
+commit c9ecc3156b88b7dd3b755265af9408825e9e41eb
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Feb 13 21:30:39 2012 +0800
+
+    some formatting fixes in README.
+
+commit 8fc7d3ca17f26c4bb687b7841deee0dd8f9e2b8e
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Feb 13 21:26:48 2012 +0800
+
+    fixed a typo in README.
+
+commit 90dc4a29c5966a492d222302a4ae8b719e5e6d02
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Feb 13 21:14:47 2012 +0800
+
+    fixed a typo in README.
+
+commit fc165e67a351eee712d863cbc8c46a72fadcc953
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Sun Feb 12 10:16:07 2012 +0800
+
+    fixed a missing semicolon in the Synopsis code sample. thanks smallfish.
+
+commit e8271574ac61809d2409a07f74743ad2dce62cfe
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Wed Feb 8 09:32:13 2012 +0800
+
+    minor optimizations by eliminating dynamic table entry lookup wherever possible.
+
+commit 578f910d8908e9c8d6639d2a6c9a28bb160e63d8
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Feb 7 20:35:56 2012 +0800
+
+    API change: now redis nil bulk replies and nil multi-bulk replies will result in ngx.null return values; redis error replies will result in `false`, `err` two return values.
+
+commit e67794163c17dc990860ca5d611e0e43b64fb0dd
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Feb 7 16:56:41 2012 +0800
+
+    only return a single nil.
+
+commit d6d34723d6945d93328eedb5fd74c9f38c8962c4
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Feb 7 16:54:14 2012 +0800
+
+    fixed the multi-bulk reply parser. thanks 付超群.
+
+commit ebcc3cf45f3a3effe54b9d428f57a3381548c59c
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Feb 7 09:43:38 2012 +0800
+
+    added a link to lua-resty-memcached.
+
+commit 76fe9fd1c42a27cc647c0f348b0262ec5d5810f2
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Feb 7 09:32:53 2012 +0800
+
+    fixed the TODO section in README.
+
+commit 64181d5283956b9ef514e26410dc7311dd5f71ac
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Tue Feb 7 09:30:38 2012 +0800
+
+    added a (passing) test for the "set_keepalive" and "get_reused_times" methods.
+
+commit 402d4ea4d4aace6797d84e2fcb5009c8ccf2d79e
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Feb 6 22:43:45 2012 +0800
+
+    documented the redis command methods API.
+
+commit e9d6337b793efc65cababd4e97a255265418562d
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Feb 6 22:32:10 2012 +0800
+
+    fixed the nil multi-bulk reply parser; also added a test for "blpop" and timeout cases.
+
+commit 9d25e02ba3a65a684411f834f2da6b8b223b9299
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Feb 6 21:43:09 2012 +0800
+
+    added (passing) tests for lpush and lrange.
+
+commit ede72fbd36b56999b14463067c52dd27f3c2f062
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Feb 6 21:37:26 2012 +0800
+
+    added some (passing) tests for incr and decr commands.
+
+commit 8b247bf2b92db28d3b01b9d18a03ccbb65722feb
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Feb 6 20:45:22 2012 +0800
+
+    added support for the full redis command list.
+
+commit 7b64e2d3ef2d1135f0ecb114dcffc481f122d0de
+Author: agentzh (章亦春) <agentzh@gmail.com>
+Date:   Mon Feb 6 20:22:49 2012 +0800
+
+    initial checkin.
